@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Farrell Hansen Ivano-XTKJ3</title>
+</head>
+<body>
+    <style>
+        body{
+            background-color: aqua;
+        }
+        label{
+            font-size: 30;
+            font-weight: 300;
+        }
+        #convert{
+            background-color: cornflowerblue;
+        }
+        #convert div{
+            text-align: center;
+            margin-top: 20px;
+        }
+        #convert1{
+            background-color: darkcyan;
+        }
+        #convert1 div{
+            text-align: center;
+            margin-top: 20px
+        }
+        #convert2{
+            background-color: cadetblue;
+        }
+        h1{
+            text-align: center;
+        }
+        #convert2 div{
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+    <h1>Convertor Temperature</h1>
+<div id="convert">
+    <div>Fahrenheit</div>
+    <label for="number">Number: </label>
+    <input type="number" name="input_number" placeholder="input number" oninput="Convert(this.value)">
+    <br>
+    <label id="labelCelcius">Celcius: <span id="celcius"></span></label>
+    <br>
+    <label id="labelFahrenheit">Fahrenheit: <span id="fahrenheit"></span></label>
+    <br>
+    <label id="labelKelvin">Kelvin: <span id="kelvin"></span></label>
+</div>
+<div id="convert1">
+    <div>Celcius</div>
+    <label>Number: </label>
+    <input type="number" name="input_number" placeholder="input number" oninput="Converting(this.value)">
+    <br>
+    <label>Celcius: <span id="celciusNum"></span></label>
+    <br>
+    <label>Fahrenheit: <span id="fahrenheitNum"></span></label>
+    <br>
+    <label>Kelvin: <span id="kelvinNum"></span></label>
+</div>
+<div id="convert2">
+    <div>Kelvin</div>
+    <label>Number: </label>
+    <input type="number" name="input_number" placeholder="input number" oninput="Convertor(this.value)">
+    <br>
+    <label>Celcius: <span id="Celcius"></span></label>
+    <br>
+    <label>Fahrenheit: <span id="Fahrenheit"></span></label>
+    <br>
+    <label>Kelvin: <span id="Kelvin"></span></label>
+</div>
+
+    <script>
+        function Convert(valueConv)
+        {
+            valueConv = parseFloat(valueConv);
+            document.getElementById("fahrenheit").innerHTML=
+            (valueConv + 0)
+
+            valueConv = parseFloat(valueConv);
+            document.getElementById("celcius").innerHTML=
+            (valueConv - 32)/1.8
+
+            valueConv = parseFloat(valueConv);
+            document.getElementById("kelvin").innerHTML=
+            ((valueConv - 32)/1.8)+273.15
+        }
+
+        function Converting(Convert)
+        {
+            Convert = parseFloat(Convert);
+            document.getElementById("celciusNum").innerHTML=
+            (Convert + 0)
+
+            Convert = parseFloat(Convert);
+            document.getElementById("fahrenheitNum").innerHTML=
+            (Convert * 1.8)+32
+
+            Convert = parseFloat(Convert);
+            document.getElementById("kelvinNum").innerHTML=
+            (Convert + 273.15)
+        }
+
+        function Convertor(ConvertValue)
+        {
+            ConvertValue = parseFloat(ConvertValue);
+            document.getElementById("Kelvin").innerHTML=
+            (ConvertValue + 0)
+
+            ConvertValue = parseFloat(ConvertValue);
+            document.getElementById("Celcius").innerHTML=
+            (ConvertValue - 273.15)
+
+            ConvertValue = parseFloat(ConvertValue);
+            document.getElementById("Fahrenheit").innerHTML=
+            ((ConvertValue-273.15)*1.8)+32
+        }
+    </script>
+</body>
+</html>
